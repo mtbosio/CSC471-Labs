@@ -1,0 +1,10 @@
+^C:\USERS\MATTB\DEVELOPMENT\CAL-POLY\CSC471\LAB01\LAB01\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/mattb/Development/Cal-Poly/CSC471/Lab01/Lab01 -BC:/Users/mattb/Development/Cal-Poly/CSC471/Lab01/Lab01/build --check-stamp-file C:/Users/mattb/Development/Cal-Poly/CSC471/Lab01/Lab01/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
