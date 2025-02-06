@@ -51,6 +51,7 @@ public:
 	float shoulderAngle = 0;
 	float elbowAngle = 0;
 	float shoulderOffset = 0;
+	float wristAngle = 0;
 
 	void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods)
 	{
@@ -178,13 +179,14 @@ public:
 			Model->translate(vec3(gTrans, 0, 0));
 			/* draw top cube - aka head */
 			Model->pushMatrix();
-				Model->translate(vec3(0, 1.4, 0));
+				Model->translate(vec3(0, 0.9, 0));
 				Model->scale(vec3(0.5, 0.5, 0.5));
 				setModel(prog, Model);
 				mesh->draw(prog);
 			Model->popMatrix();
 			//draw the torso with these transforms
 			Model->pushMatrix();
+				Model->translate(vec3(0, -0.8, 0));
 			  Model->scale(vec3(1.25, 1.35, 1.25));
 			  setModel(prog, Model);
 			  mesh->draw(prog);
@@ -192,13 +194,14 @@ public:
 			// draw the upper 'arm' - relative 
 			//note you must change this to include 3 components!
 			shoulderOffset = sin(glfwGetTime()) - 0.1; // Moves up and down
-			elbowAngle = sin(glfwGetTime() + 1.0);
+			elbowAngle = sin(glfwGetTime()) * 10 + 40.0f;
+			wristAngle = sin(glfwGetTime()) * 30 + 30;
 
 			// draw the upper 'arm' - relative 
 			//note you must change this to include 3 components!
 			Model->pushMatrix();
 				//place at shoulder
-				Model->translate(vec3(1.0, 0.6, 0));
+				Model->translate(vec3(0.6, -0.3, 0));
 				//rotate shoulder joint
 				Model->rotate(shoulderOffset, vec3(0, 0, 1));
 				//move to shoulder joint
@@ -207,16 +210,66 @@ public:
 				//now draw lower arm - this is INCOMPLETE and you will add a 3rd component
 				//right now this is in the SAME place as the upper arm
 				Model->pushMatrix();
+					Model->translate(vec3(0, -0.5, 0));
+					Model->rotate(radians(elbowAngle), vec3(0, 0, 1));
 					Model->translate(vec3(1.5, 0, 0));
-					Model->rotate(shoulderOffset, vec3(0, 0, 1));
-					Model->scale(vec3(0.8, 0.25, 0.25));
+
+					Model->pushMatrix();
+					Model->translate(vec3(0.6, 0, 0));  // Move to wrist
+					Model->rotate(radians(wristAngle), vec3(0, 0, 1));  // Rotate around Z-axis
+					Model->translate(vec3(0.3, 0, 0));  // Move to hand center
+					Model->scale(vec3(0.4, 0.2, 0.2));
+					setModel(prog, Model);
+					mesh->draw(prog);
+					Model->popMatrix();
+
+					Model->scale(vec3(0.7, 0.25, 0.25));
 					setModel(prog, Model);
 					mesh->draw(prog);
 				Model->popMatrix();
 
 				//Do final scale ONLY to upper arm then draw
 				//non-uniform scale
-				Model->scale(vec3(0.8, 0.25, 0.25));
+				Model->scale(vec3(0.6, 0.35, 0.35));
+				setModel(prog, Model);
+				mesh->draw(prog);
+			Model->popMatrix();
+
+
+			// draw the upper 'arm' - relative 
+			//note you must change this to include 3 components!
+			Model->pushMatrix();
+				//place at shoulder
+				Model->translate(vec3(-0.6, 0.1, 0));
+				//rotate shoulder joint
+				Model->rotate(radians(210.0f), vec3(0, 0, 1));
+				//move to shoulder joint
+				Model->translate(vec3(0.8, 0, 0));
+
+				//now draw lower arm - this is INCOMPLETE and you will add a 3rd component
+				//right now this is in the SAME place as the upper arm
+				Model->pushMatrix();
+					Model->translate(vec3(0, -0.5, 0));
+					Model->rotate(radians(50.0f), vec3(0, 0, 1));
+					Model->translate(vec3(1.5, 0, 0));
+
+					Model->pushMatrix();
+					Model->translate(vec3(0.6, 0, 0));  // Move to wrist
+					Model->rotate(radians(10.0f), vec3(0, 0, 1));  // Rotate around Z-axis
+					Model->translate(vec3(0.3, 0, 0));  // Move to hand center
+					Model->scale(vec3(0.4, 0.2, 0.2));
+					setModel(prog, Model);
+					mesh->draw(prog);
+					Model->popMatrix();
+
+					Model->scale(vec3(0.7, 0.25, 0.25));
+					setModel(prog, Model);
+					mesh->draw(prog);
+				Model->popMatrix();
+
+				//Do final scale ONLY to upper arm then draw
+				//non-uniform scale
+				Model->scale(vec3(0.6, 0.35, 0.35));
 				setModel(prog, Model);
 				mesh->draw(prog);
 			Model->popMatrix();
