@@ -1,0 +1,10 @@
+^C:\USERS\MATTB\DEVELOPMENT\CAL-POLY\CSC471\LABS\LAB02\BUILD\CMAKEFILES\FD1325E3280F356438B21139CFA935F3\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/mattb/Development/Cal-Poly/CSC471/Labs/Lab02 -BC:/Users/mattb/Development/Cal-Poly/CSC471/Labs/Lab02/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/mattb/Development/Cal-Poly/CSC471/Labs/Lab02/build/Lab01.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

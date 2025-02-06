@@ -1,0 +1,21 @@
+﻿  Building Custom Rule C:/Users/mattb/Development/Cal-Poly/CSC471/Labs/Lab02/CMakeLists.txt
+  Image.cpp
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\stb_image_write.h(221,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '../src/Image.cpp')
+  
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\stb_image_write.h(615,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '../src/Image.cpp')
+  
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\stb_image_write.h(996,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '../src/Image.cpp')
+  
+  main.cpp
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp(54,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp(55,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp(70,20): warning C4244: 'initializing': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp(71,20): warning C4244: 'initializing': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp(72,20): warning C4244: 'initializing': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp(76,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp(76,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Lab01.vcxproj -> C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\build\Debug\Lab01.exe

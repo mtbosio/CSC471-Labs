@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\src\stb_image_write.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\mattb\Development\Cal-Poly\CSC471\Labs\Lab02\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{324AA6D9-650F-3358-A929-23950E578D3A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{27B7303B-E64B-3279-B383-5AA3D9518DCD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
